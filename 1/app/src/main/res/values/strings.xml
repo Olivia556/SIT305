@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <string-array name="types">
+        <item>Metre</item>
+        <item>Celsius </item>
+        <item>kilograms</item>
+    </string-array>
+</resources>

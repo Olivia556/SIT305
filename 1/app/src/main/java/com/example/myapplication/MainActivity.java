@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                     textView2.setVisibility(View.VISIBLE);
 
                     textView3.setVisibility(View.VISIBLE);
-                }else{
+                }else {
                     Toast.makeText(MainActivity.this, "Please select the correct conversion icon", 2000).show();
                 }
             }

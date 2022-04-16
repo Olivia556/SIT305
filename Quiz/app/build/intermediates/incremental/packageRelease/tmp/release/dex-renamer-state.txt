@@ -1,0 +1,4 @@
+#Fri Apr 15 19:03:52 GMT+08:00 2022
+base.0=E\:\\androidTool\\AndroidProject\\Task 3.1C\\Quiz\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

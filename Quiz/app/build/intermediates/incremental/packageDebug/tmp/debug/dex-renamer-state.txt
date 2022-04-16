@@ -1,0 +1,4 @@
+#Fri Apr 15 20:41:30 CST 2022
+base.0=/Users/olivia/Desktop/SIT305 Android/Task 3.1C/Quiz/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

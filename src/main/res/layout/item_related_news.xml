@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/layout_cl"
+    android:layout_height="120dp">
+
+    <ImageView
+        android:id="@+id/imageViewPicture"
+        android:layout_width="128dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/newsTitleString"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="this is title"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:maxWidth="200dp"
+        app:layout_constraintStart_toEndOf="@+id/imageViewPicture"
+        app:layout_constraintTop_toTopOf="@+id/imageViewPicture" />
+
+    <TextView
+        android:id="@+id/newsDetailString"
+        android:layout_width="wrap_content"
+        android:layout_height="68dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="this is content"
+        android:maxWidth="200dp"
+        android:maxLength="37"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewPicture"
+        app:layout_constraintStart_toEndOf="@+id/imageViewPicture" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

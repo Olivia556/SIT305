@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_cl"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+    <ImageView
+        android:id="@+id/myNewImageViewCache"
+        android:layout_width="180dp"
+        android:layout_height="140dp"
+        android:layout_centerHorizontal="true"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/myNewTiltleString"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:text="this is title"
+        android:paddingLeft="10dp"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/myNewImageViewCache"
+        app:layout_constraintStart_toStartOf="@+id/myNewImageViewCache"
+        app:layout_constraintTop_toBottomOf="@+id/myNewImageViewCache" />
+
+    <TextView
+        android:id="@+id/myNewDetailString"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:textSize="16dp"
+        android:paddingLeft="10dp"
+        android:text="111111111111123123123141412412414124124124124124124142342333333333444567891032411"
+        android:maxLength="50"
+        app:layout_constraintEnd_toEndOf="@+id/myNewTiltleString"
+        app:layout_constraintStart_toStartOf="@+id/myNewTiltleString"
+        app:layout_constraintTop_toBottomOf="@+id/myNewTiltleString" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

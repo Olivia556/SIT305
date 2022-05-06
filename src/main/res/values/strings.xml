@@ -1,22 +1,3 @@
 <resources>
-    <string name="app_name">News</string>
-    <string-array name="newsTitle">
-        <item>National COVID-19 Vaccination Program Update</item>
-        <item>METRICON brings you a free cooking class online</item>
-        <item>Australia out of the new crown detection device launched 3 million Novavax vaccine arrived in the notice</item>
-        <item>In need of advice? Meet our friendly DUSA Advocates as you grab a free brekky on campus!</item>
-        <item>How water can help you manage anxiety</item>
-        <item>Don’t shy away from critique – learn how to turn feedback into better marks</item>
-        <item>Have you done a good deed today? Here’s why simple acts of kindness can boost your wellbeing</item>
-    </string-array>
-
-    <string-array name="newsDetail">
-        <item>Now is a busy time for submitting assignments and receiving feedback on your work.</item>
-        <item>Sometimes we are delighted by the marker feedback we get on assignments, and other times it can be upsetting;</item>
-        <item>you might feel a bit confused if you receive suggestions for improvement you weren’t expecting, or that you don’t fully understand.</item>
-        <item>Remember: understanding feedback is the key to academic success, so think of it as a learning opportunity, not an obstacle</item>
-        <item>Here are a few tips for making effective use of the feedback you receive while you’re studying online, including seeking further advice if you need more help</item>
-        <item>It includes interactive tools, videos and podcasts that can enhance relaxation, focus, energy, mood and productivity in minutes.</item>
-        <item>Challenge yourself to do three random acts of kindness over a week and note how they make you feel via your personalised app profile</item>
-    </string-array>
+    <string name="app_name">TruckSharing</string>
 </resources>

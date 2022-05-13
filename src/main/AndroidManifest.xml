@@ -1,34 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.trucksharing">
-
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    package="com.example.lostandfound">
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TruckSharing">
+        android:theme="@style/Theme.LostAndFound">
         <activity
-            android:name=".AccountActivity"
+            android:name=".DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".OrderDetailActivity"
+            android:name=".ShowActivity"
             android:exported="false" />
         <activity
-            android:name=".AddOrderNextActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AddOrderActivity"
-            android:exported="false" />
-        <activity
-            android:name=".HomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SignUpActivity"
+            android:name=".AddAdvertActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

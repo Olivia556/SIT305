@@ -15,6 +15,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             +"fullName text,"
             +"username text,"
             +"password text,"
+            +"head text,"
             +"phone text)";
     public static final String CREATE_ORDER_LIST = "create table OrderList ("
             +"u_id text primary key,"

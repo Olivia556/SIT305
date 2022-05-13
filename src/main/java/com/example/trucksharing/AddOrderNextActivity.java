@@ -2,59 +2,65 @@ package com.example.trucksharing;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.ContentValues;
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import androidx.appcompat.app.AppCompatActivity;
-import android.content.ContentValues;
-import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.widget.RadioGroup;
+
 import java.util.UUID;
-import android.os.Build;
-import android.os.Bundle;
 
 public class AddOrderNextActivity extends AppCompatActivity {
 
-    public String receiver = new String();
-    public String date = new String();
+    public String username = new String();
     public String time = new String();
+    public String receiver = new String();
+    public String goodType = new String();
+    public String date = new String();
     public String location = new String();
+    public String vehicleType = new String();
+
     public Button button_Order_create;
     public RadioGroup button_food_Type;
     public RadioGroup radio_vehicle_type;
+
     public RadioButton button_future;
     public RadioButton button_food_dry_type;
+    public RadioButton btn_food;
     public RadioButton button_material_buildin;
     public RadioButton button_good_others;
+
     public RadioButton button_trucks;
     public RadioButton button_vans;
     public RadioButton button_re_truck;
     public RadioButton button_truck_mini;
     public RadioButton btn_other_vehicle;
-    public RadioButton button_food_get;
-    public String goodType = new String();
-    public String vehicleType = new String();
-    public String username = new String();
+
     public EditText edit_weight_add_next;
     public EditText edit_width_add_next;
     public EditText edit_length_add_next;
     public EditText edit_height_add_next;
+
     public EditText edit_text_two;
     public EditText edit_text_three;
+
     private DatabaseHelper Data_base_Helper_this;
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_order_next);
-        getWindow().setStatusBarColor(getResources().getColor(R.color.black));
+        getWindow().setStatusBarColor(getResources().getColor(R.color.white));
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         ActionBar actionBar = getSupportActionBar();
-        if(actionBar == null){
-            
-        }else{
+        if(!(actionBar == null)){
             actionBar.hide();
         }
         username = getIntent().getStringExtra("username");
@@ -63,13 +69,14 @@ public class AddOrderNextActivity extends AppCompatActivity {
         time = getIntent().getStringExtra("time");
         location = getIntent().getStringExtra("location");
 
+
         button_Order_create = findViewById(R.id.button_Order_create);
         button_food_Type = findViewById(R.id.radioGroup);
         radio_vehicle_type = findViewById(R.id.radioGroup2);
 
         button_future = findViewById(R.id.button_future);
         button_food_dry_type = findViewById(R.id.button_food_dry_type);
-        button_food_get = findViewById(R.id.button_food_get);
+        btn_food = findViewById(R.id.btn_food);
         button_material_buildin = findViewById(R.id.button_material_buildin);
         button_good_others = findViewById(R.id.button_good_others);
 
@@ -86,7 +93,9 @@ public class AddOrderNextActivity extends AppCompatActivity {
 
         edit_text_two = findViewById(R.id.edit_text_two);
         edit_text_three = findViewById(R.id.edit_text_three);
-        Data_base_Helper_this = new DatabaseHelper(this,"LocalDatabase.db",null,1);
+
+        Data_base_Helper_this = new DatabaseHelper(this,"LocalDatabase.db",null,2);
+
 
         button_food_Type.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -97,8 +106,8 @@ public class AddOrderNextActivity extends AppCompatActivity {
                 if(i == button_food_dry_type.getId()){
                     goodType = button_food_dry_type.getText().toString();
                 }
-                if(i == button_food_get.getId()){
-                    goodType = button_food_get.getText().toString();
+                if(i == btn_food.getId()){
+                    goodType = btn_food.getText().toString();
                 }
                 if(i == button_material_buildin.getId()){
                     goodType = button_material_buildin.getText().toString();

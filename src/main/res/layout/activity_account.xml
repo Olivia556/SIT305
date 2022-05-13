@@ -18,86 +18,74 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add image"
-        android:textColor="@color/black"
-        android:textSize="24dp"
+        android:id="@+id/text_full_name_login"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:text="name"
+        android:textSize="26dp"
+        android:gravity="center"
+        android:background="@drawable/edit_layout"
+        android:hint="username"
+        android:paddingLeft="10dp"
         app:layout_constraintEnd_toEndOf="@+id/iv_headIcon"
         app:layout_constraintStart_toStartOf="@+id/iv_headIcon"
         app:layout_constraintTop_toBottomOf="@+id/iv_headIcon" />
 
-    <EditText
-        android:id="@+id/edit_text_full_name_login"
+    <TextView
+        android:id="@+id/text_username_login"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/edit_layout"
         android:hint="username"
+        android:textSize="26dp"
+        android:gravity="center"
         android:paddingLeft="10dp"
         app:layout_constraintEnd_toEndOf="@+id/iv_headIcon"
         app:layout_constraintStart_toStartOf="@+id/iv_headIcon"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/text_full_name_login" />
 
-    <EditText
-        android:id="@+id/user_name_login_edit_text"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/edit_layout"
-        android:hint="username"
-        android:paddingLeft="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/iv_headIcon"
-        app:layout_constraintStart_toStartOf="@+id/iv_headIcon"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_full_name_login" />
-
-    <EditText
-        android:id="@+id/edit_text_pass_word_login"
+    <TextView
+        android:id="@+id/text_password_login"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/edit_layout"
         android:hint="password"
         android:paddingLeft="10dp"
+        android:textSize="26dp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="@+id/iv_headIcon"
         app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="@+id/iv_headIcon"
-        app:layout_constraintTop_toBottomOf="@+id/user_name_login_edit_text" />
+        app:layout_constraintTop_toBottomOf="@+id/text_username_login" />
 
-    <EditText
-        android:id="@+id/edit_text_confirm_password_login"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:background="@drawable/edit_layout"
-        android:hint="confirm password"
-        android:paddingLeft="10dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/iv_headIcon"
-        app:layout_constraintStart_toStartOf="@+id/iv_headIcon"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_pass_word_login" />
 
-    <EditText
-        android:id="@+id/edit_text_phone_login"
+    <TextView
+        android:id="@+id/text_phone_login"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
+        android:textSize="26dp"
+        android:gravity="center"
         android:background="@drawable/edit_layout"
         android:hint="phone number"
         android:paddingLeft="10dp"
         app:layout_constraintEnd_toEndOf="@+id/iv_headIcon"
         app:layout_constraintStart_toStartOf="@+id/iv_headIcon"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_confirm_password_login" />
+        app:layout_constraintTop_toBottomOf="@+id/text_password_login" />
 
     <Button
-        android:id="@+id/btn_create_account_login"
+        android:id="@+id/btn_back"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginTop="30dp"
-        android:text="CREATE ACCOUNT"
+        android:layout_marginTop="50dp"
         android:background="@drawable/btn_layout"
-        app:layout_constraintEnd_toEndOf="@+id/edit_text_phone_login"
-        app:layout_constraintStart_toStartOf="@+id/edit_text_phone_login"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_phone_login" />
+        android:text="BACK"
+        app:layout_constraintEnd_toEndOf="@+id/text_phone_login"
+        app:layout_constraintStart_toStartOf="@+id/text_phone_login"
+        app:layout_constraintTop_toBottomOf="@+id/text_phone_login" />
 </androidx.constraintlayout.widget.ConstraintLayout>

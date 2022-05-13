@@ -12,53 +12,60 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 import java.util.UUID;
 
 public class AllOrderAdapter extends RecyclerView.Adapter<AllOrderAdapter.MyViewHolder> {
-    private Context context;
+
+
     private OnItemClickListener item_on_click_listeners;
     private List<ItemBean> Item_Bean_list;
+    private Context context;
+
     private DatabaseHelper Data_base_Helper_this;
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_order,parent,false);
         return new MyViewHolder(view);
     }
+
     @Override
     public void onBindViewHolder(MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        int posIndex = position;
+        int index = position;
         Log.e("TAG", "onBindViewHolder: "+Item_Bean_list.get(position).vehicleType);
         switch (Item_Bean_list.get(position).vehicleType){
+
             case "Truck":
-                holder.vehicle_type_image_view.setBackgroundResource(R.drawable.truck);
+                holder.ic_vehicle_type.setBackgroundResource(R.drawable.truck);
                 break;
             case "Van":
-                holder.vehicle_type_image_view.setBackgroundResource(R.drawable.van);
+                holder.ic_vehicle_type.setBackgroundResource(R.drawable.van);
                 break;
             case "Refrigerated truck":
-                holder.vehicle_type_image_view.setBackgroundResource(R.drawable.refrigerated_truck);
+                holder.ic_vehicle_type.setBackgroundResource(R.drawable.refrigerated_truck);
                 break;
             case "Mini truck":
-                holder.vehicle_type_image_view.setBackgroundResource(R.drawable.mini_truck);
+                holder.ic_vehicle_type.setBackgroundResource(R.drawable.mini_truck);
                 break;
             default:
-                holder.vehicle_type_image_view.setBackgroundResource(R.drawable.other_vehecle);
+                holder.ic_vehicle_type.setBackgroundResource(R.drawable.other_vehecle);
                 break;
         }
-        holder.text_date_time_this.setText(Item_Bean_list.get(position).pickUpDetailDate);
-        holder.text_view_contents.setText(Item_Bean_list.get(position).goodDetail);
-        holder.button_share_to_others.setBackgroundResource(R.drawable.btn_share);
-        holder.Constraint_Layout.setOnClickListener(new View.OnClickListener() {
+        holder.text_date_time.setText(Item_Bean_list.get(position).pickUpDetailDate);
+        holder.text_content.setText(Item_Bean_list.get(position).goodDetail);
+        holder.btn_share.setBackgroundResource(R.drawable.btn_share);
+        holder.cl_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                item_on_click_listeners.onItemClick(view,posIndex);
+                item_on_click_listeners.onItemClick(view,index);
             }
         });
 
-        holder.button_share_to_others.setOnClickListener(new View.OnClickListener() {
+        holder.btn_share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 SQLiteDatabase db = Data_base_Helper_this.getWritableDatabase();
@@ -74,32 +81,38 @@ public class AllOrderAdapter extends RecyclerView.Adapter<AllOrderAdapter.MyView
     public int getItemCount() {
         return Item_Bean_list.size();
     }
+
+
     public interface OnItemClickListener {
         void onItemClick(View view,int position);
     }
+
     public void addItemClickListener(OnItemClickListener listener){
         item_on_click_listeners = listener;
     }
+
     class MyViewHolder extends RecyclerView.ViewHolder{
-        public ImageView vehicle_type_image_view;
-        public TextView text_date_time_this;
-        public TextView text_view_contents;
-        public Button button_share_to_others;
-        public ConstraintLayout Constraint_Layout;
+
+        public ImageView ic_vehicle_type;
+        public TextView text_date_time;
+        public TextView text_content;
+        public Button btn_share;
+        public ConstraintLayout cl_layout;
+
         public MyViewHolder(View itemView) {
             super(itemView);
-            vehicle_type_image_view = itemView.findViewById(R.id.vehicle_type_image_view);
-            text_date_time_this = itemView.findViewById(R.id.text_date_time_this);
-            text_view_contents = itemView.findViewById(R.id.text_view_contents);
-            button_share_to_others = itemView.findViewById(R.id.button_share_to_others);
-            Constraint_Layout = itemView.findViewById(R.id.Constraint_Layout);
+            ic_vehicle_type = itemView.findViewById(R.id.ic_vehicle_type);
+            text_date_time = itemView.findViewById(R.id.text_date_time);
+            text_content = itemView.findViewById(R.id.text_content);
+            btn_share = itemView.findViewById(R.id.btn_share);
+            cl_layout = itemView.findViewById(R.id.cl_layout);
         }
     }
 
     public AllOrderAdapter(List<ItemBean> Item_Bean_list, Context context){
         this.Item_Bean_list = Item_Bean_list;
         this.context = context;
-        Data_base_Helper_this = new DatabaseHelper(context,"LocalDatabase.db", null, 1);
+        Data_base_Helper_this = new DatabaseHelper(context,"LocalDatabase.db",null,2);
 
     }
 

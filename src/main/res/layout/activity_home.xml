@@ -4,49 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity"
-    android:fitsSystemWindows="true">
+    tools:context=".HomeActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:gravity="left"
+        android:paddingLeft="30dp"
+        android:text="Video URL:"
+        android:textSize="24dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-
-        <ImageView
-            android:id="@+id/iv_menu_home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:src="@drawable/ic_menu"
-            android:layout_marginTop="10dp"/>
-    </androidx.appcompat.widget.Toolbar>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_order_view_home"
+    <EditText
+        android:id="@+id/edit_url"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingLeft="10dp"
+        android:text="https://prod-streaming-video-msn-com.akamaized.net/ba258271-89c7-47bc-9742-bcae67c23202/f7ff4fe4-1346-47bb-9466-3f4662c1ac3a.mp4"
+        android:background="@drawable/edit_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+    <Button
+        android:id="@+id/btn_play"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="100dp"
+        android:text="PLAY"
+        app:layout_constraintEnd_toEndOf="@+id/edit_url"
+        app:layout_constraintStart_toStartOf="@+id/edit_url"
+        app:layout_constraintTop_toBottomOf="@+id/edit_url" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/Floating_Action_Button_add"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="50dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/ic_add"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+    <Button
+        android:id="@+id/btn_addToList"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:text="ADD TO PLAYLIST"
+        app:layout_constraintEnd_toEndOf="@+id/edit_url"
+        app:layout_constraintStart_toStartOf="@+id/edit_url"
+        app:layout_constraintTop_toBottomOf="@+id/btn_play" />
 
+    <Button
+        android:id="@+id/btn_playList"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:text="MY PLAYLIST"
+        app:layout_constraintEnd_toEndOf="@+id/edit_url"
+        app:layout_constraintStart_toStartOf="@+id/edit_url"
+        app:layout_constraintTop_toBottomOf="@+id/btn_addToList" />
 </androidx.constraintlayout.widget.ConstraintLayout>
